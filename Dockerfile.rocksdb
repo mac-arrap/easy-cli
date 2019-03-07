@@ -1,0 +1,34 @@
+FROM ubuntu:16.04
+
+RUN apt-get update -y && apt-get install -y \
+        build-essential \
+        git \
+        wget \
+        unzip \
+        libbz2-dev \
+        zlib1g-dev \
+        liblz4-dev \
+        libsnappy-dev && \
+  wget https://github.com/facebook/rocksdb/archive/v5.13.3.zip && \
+  unzip v5.13.3.zip -d /tmp/rocksdb && \
+  rm v5.13.3.zip && \
+  cd /tmp/rocksdb/rocksdb-5.13.3 && \
+  make shared_lib && \
+    make install && \
+    rm -rf /tmp/rocksdb && \
+    apt-get purge -y \
+        gcc \
+        make \
+        git \
+        wget \
+        unzip \
+        libbz2-dev \
+        zlib1g-dev \
+        liblz4-dev \
+        libsnappy-dev && \
+    apt-get install -y \
+        libbz2-1.0 \
+        libjemalloc1 \
+        libsnappy1v5 \
+        libzstd1 \
+        zlib1g
