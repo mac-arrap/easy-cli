@@ -13,6 +13,6 @@ git clone https://github.com/cam-parra/easy-cli.git
 - pool create testnet gen_txn_file=test_genesis
 - pool connect testnet
 ## Example use
-- wallet create test-wallet key=sovrinisawesome storage_config={"pool":"testnet"}
-- wallet open test-wallet key=sovrinisawesome 
+- wallet create test-wallet key=camisawesome storage_config={"pool":"testnet"}
+- wallet open test-wallet key=camisawesome
 - did new
