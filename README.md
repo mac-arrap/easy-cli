@@ -7,6 +7,8 @@ git clone https://github.com/cam-parra/easy-cli.git
 - docker run --name indy-cli -itd camparra/indy-cli
 - docker exec -ti indy-cli /bin/bash
 ## Enter the ledger
+- vim test_genesis
+-*PASTE YOUR POOL GENESIS*
 - indy-cli
 - pool create testnet gen_txn_file=test_genesis
 - pool connect testnet
