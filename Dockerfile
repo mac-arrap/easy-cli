@@ -1,6 +1,6 @@
 FROM camparra/ubuntu16.04-rocksdb
 
-ARG li_ver=1.8.1
+ARG li_ver=1.10.1
 ARG lc_ver=0.4.5
 
 USER root
@@ -20,6 +20,5 @@ COPY live_genesis /usr/src/indy
 
 RUN apt-get update -y && apt-get install -y \
     emacs \
-    libindy-crypto=${lc_ver} \
     libindy=${li_ver} \
     indy-cli
